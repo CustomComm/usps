@@ -29,6 +29,7 @@ module USPS
         when '-2147219402'; InvalidStateError
         when '-2147219403'; MultipleAddressError
         when '-2147218900'; InvalidImageTypeError
+        when '-2147219301'; NotTrackableError
         else              ; Error
         end
       end
@@ -36,6 +37,7 @@ module USPS
   end
 
   class AuthorizationError < Error; end
+  class NotTrackableError < Error; end
 
   class ValidationError < Error; end
   class InvalidCityError < ValidationError; end
